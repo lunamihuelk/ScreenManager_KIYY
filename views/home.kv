@@ -1,0 +1,27 @@
+
+<UnaScreen>:
+    name: 'screen_c'
+    BoxLayout:
+        orientation: "vertical"
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'assets/images/bg.png'
+        Label:
+            text: "Screen C"
+        BoxLayout:
+            orientation: 'vertical'
+            canvas:
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [(200, 100), (200, 40), (self.size[0], self.size[0]), (20, 20)]
+        Button:
+            text: "A"
+            size_hint_y: None
+            height: dp(100)
+            on_press: root.manager.current = "screen_a"
+        Button:
+            text: "B"
+            on_press: root.manager.current = "screen_b"
